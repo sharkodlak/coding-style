@@ -1,0 +1,21 @@
+{
+	"name": "sharkodlak/coding-style",
+	"description": "Coding style for Sahrkodlak's projects.",
+	"keywords": [
+		"coding style",
+		"PHP_CodeSniffer"
+	],
+	"homepage": "https://github.com/Sharkodlak/coding-style",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Pavel Štětina",
+			"email": "github@shark.kom.cz",
+			"role": "Developer"
+		}
+	],
+	"support": {
+		"issues": "https://github.com/sharkodlak/coding-style/issues",
+		"wiki": "https://github.com/sharkodlak/coding-style/wiki"
+	}
+}
