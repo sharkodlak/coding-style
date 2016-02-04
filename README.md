@@ -1,0 +1,2 @@
+# codingStyle
+Coding style specification
