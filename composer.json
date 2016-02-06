@@ -1,6 +1,6 @@
 {
 	"name": "sharkodlak/coding-style",
-	"description": "Coding style for Sahrkodlak's projects.",
+	"description": "Coding style for Sharkodlak's projects.",
 	"keywords": [
 		"coding style",
 		"PHP_CodeSniffer"
@@ -17,5 +17,8 @@
 	"support": {
 		"issues": "https://github.com/sharkodlak/coding-style/issues",
 		"wiki": "https://github.com/sharkodlak/coding-style/wiki"
+	},
+	"require-dev": {
+		"squizlabs/php_codesniffer": "*"
 	}
 }
