@@ -1,12 +1,15 @@
 <?xml version="1.0"?>
 <ruleset name="Sharkodlak">
 	<description>Sharkodlak's favorite coding standard.</description>
+	<arg name="encoding" value="UTF-8"/>
+	<arg name="report-width" value="auto"/>
 	<arg name="tab-width" value="4"/>
 	<rule ref="Generic">
 		<exclude name="Generic.Arrays.DisallowShortArraySyntax"/>
 		<exclude name="Generic.CodeAnalysis.UnconditionalIfStatement"/>
 		<exclude name="Generic.Files.EndFileNoNewline"/>
 		<exclude name="Generic.Files.LowercasedFilename"/>
+		<exclude name="Generic.Files.OneClassPerFile"/>
 		<exclude name="Generic.Formatting.MultipleStatementAlignment"/>
 		<exclude name="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine"/>
 		<exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie.SpaceAfterBracket"/>
@@ -15,6 +18,8 @@
 	<rule ref="PSR2">
 		<exclude name="Generic.WhiteSpace.DisallowTabIndent"/>
 		<exclude name="PSR2.Classes.ClassDeclaration.FirstInterfaceSameLine"/>
+		<exclude name="PSR2.Classes.ClassDeclaration.OpenBraceNewLine"/>
+		<exclude name="PSR2.Classes.PropertyDeclaration.Underscore"/>
 		<exclude name="PSR2.ControlStructures.ElseIfDeclaration"/>
 		<exclude name="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
 	</rule>
@@ -39,6 +44,12 @@
 		</properties>
 	</rule>
 	<rule ref="Generic.WhiteSpace.DisallowSpaceIndent"/>
+	<rule ref="PEAR.Files.IncludingFile"/>
+	<rule ref="PEAR.Files.IncludingFile.UseIncludeOnce">
+		<type>warning</type>
+	</rule>
+	<rule ref="PEAR.Formatting.MultiLineAssignment"/>
+	<rule ref="PEAR.WhiteSpace.ObjectOperatorIndent"/>
 	<rule ref="PSR1.Files.SideEffects.FoundWithSymbols">
 		<type>error</type>
 	</rule>

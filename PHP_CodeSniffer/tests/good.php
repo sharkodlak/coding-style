@@ -23,7 +23,9 @@ class Good extends Fine implements Right,
 	private static $staticAttic = '^';
 	protected static $arrayDereferencing = range(0, 9)[7];
 	public static $char = 'qwertyuiop'[3];
-	private $binary = 0b01010101;
+	private $binary
+		= 0b01010101;
+	protected $_underscore;
 
 	public static function variableArguments(string $first, int ...$params): string {
 		return sprintf($first, array_sum($params), ...$params);
@@ -63,4 +65,29 @@ class Good extends Fine implements Right,
 			yield $i;
 		}
 	};
+
+	protected function multilineCondition() {
+		if ($first > 7
+			&& $second < 9
+			|| $third
+		) {
+			doSomethink();
+		}
+	}
+
+	private function includeFile() {
+		include_once __DIR__ . '/file.php';
+	}
+
+	protected function closure() {
+		$a = function () use ($this) {
+			return $this->a;
+		}
+	}
+
+	protected function flow() {
+		$this->instance
+			->do()
+			->done();
+	}
 }
