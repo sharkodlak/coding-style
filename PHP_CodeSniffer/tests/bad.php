@@ -167,8 +167,12 @@ class Second_Class {
 	}
 }
 ?>
-<?
+Output send
+<? // Well it looks like it can't be parsed
 
 Bad::asdf();
 
+?>
+<?php
+// Ends with closing tag
 ?>
