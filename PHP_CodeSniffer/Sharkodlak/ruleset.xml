@@ -21,6 +21,7 @@
 		<exclude name="PSR2.Classes.ClassDeclaration.OpenBraceNewLine"/>
 		<exclude name="PSR2.Classes.PropertyDeclaration.Underscore"/>
 		<exclude name="PSR2.ControlStructures.ElseIfDeclaration"/>
+		<exclude name="Squiz.Functions.FunctionDeclaration"/>
 		<exclude name="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
 	</rule>
 
@@ -44,13 +45,24 @@
 		</properties>
 	</rule>
 	<rule ref="Generic.WhiteSpace.DisallowSpaceIndent"/>
-	<rule ref="PEAR.Files.IncludingFile"/>
+
 	<rule ref="PEAR.Files.IncludingFile.UseIncludeOnce">
 		<type>warning</type>
 	</rule>
 	<rule ref="PEAR.Formatting.MultiLineAssignment"/>
 	<rule ref="PEAR.WhiteSpace.ObjectOperatorIndent"/>
+
 	<rule ref="PSR1.Files.SideEffects.FoundWithSymbols">
 		<type>error</type>
 	</rule>
+
+	<rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
+	<rule ref="Squiz.Classes.SelfMemberReference"/>
+	<rule ref="Squiz.Commenting.FunctionCommentThrowTag.Missing">
+		<type>warning</type>
+	</rule>
+	<rule ref="Squiz.Strings.EchoedStrings"/>
+	<rule ref="Squiz.WhiteSpace.CastSpacing"/>
+	<rule ref="Squiz.WhiteSpace.LanguageConstructSpacing"/>
+	<rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
 </ruleset>

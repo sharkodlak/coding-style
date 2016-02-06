@@ -56,24 +56,6 @@ Stupid {
 		}
 	}
 
-	public function prematureExit() {
-		exit('qwerty');
-		'some other code after exit';
-	}
-
-	public function prematureReturn() {
-		return true;
-		'some other code after return';
-	}
-
-	public function prematureBreakAndContinue() {
-		while (true) {
-			continue;
-			break;
-			'some other code after break or continue';
-		}
-	}
-
 	public function gotoDisallowedInHighLevelLanguages() {
 		goto label;
 	}
@@ -97,6 +79,21 @@ Stupid {
 	}
 }
 
+interface RiverBank {
+	public function getRiverName();
+}
+
+trait RiverSide {
+	public function getSide() {
+		return 'right';
+	}
+}
+
+class AbstractRiverBank implements RiverBank {
+	use RiverSide;
+	abstract public function getSide();
+}
+
 class Second_Class {
 	protected function flow() {
 		$this->instance->
@@ -112,6 +109,61 @@ class Second_Class {
 	if ($var) {
 	doSomethink();
 	}
+	}
+
+	public function multilineFunctionCall($first, $second,
+		$third
+		, $fourth) {
+		doSomethink($first, $second, $third, $fourth);
+	}
+
+	public function arrayKeyBracesSpacing() {
+		$array [ $key ];
+	}
+
+	public function classNameAsReference() {
+		Second_Class::method();
+	}
+
+	public function foreachSpacing() {
+		foreach ($iterator  AS $key=>$value) {
+
+		}
+	}
+
+	public function echoConstruct() {
+		echo ('string should not be in parenthesis');
+		echo'missing space';
+	}
+
+	public  function  methodDeclarationSpacing() {
+		doSomethink();
+	}
+
+	public function typeCasting() {
+		( int ) $float;
+	}
+
+	public function semicolonSpacing() {
+		$var = 'sdfghjk' ;
+	}
+
+	public function prematureExit() {
+		exit('qwerty');
+		'some other code after exit';
+	}
+
+	public function prematureReturn() {
+		return true;
+		'some other code after return';
+	}
+
+	public function prematureBreakAndContinue() {
+		while (true) {
+			continue;
+			break;
+			'some other code after break or continue';
+		}
 	}
 }
 ?>

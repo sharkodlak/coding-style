@@ -38,4 +38,11 @@ final class Warn {
 	private function includeFile() {
 		require_once __DIR__ . '/file.php';
 	}
+
+	/**
+	 * Throws exception, so it shall be documented.
+	 */
+	public function documentExceptionThrow() {
+		throw new \Exception("Error Processing Request", 1);
+	}
 }
