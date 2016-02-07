@@ -35,6 +35,14 @@ final class Warn {
 		}
 	}
 
+	public function sameVariableIsModifiedInBothLoops() {
+		for ($i = 0; $i < 10; ++$i) {
+			for ($j = 10; $j > 0; $i--) {
+				doSomethink();
+			}
+		}
+	}
+
 	private function includeFile() {
 		require_once __DIR__ . '/file.php';
 	}
@@ -44,5 +52,32 @@ final class Warn {
 	 */
 	public function documentExceptionThrow() {
 		throw new \Exception("Error Processing Request", 1);
+	}
+
+	public function prematureExit() {
+		exit('qwerty');
+		'some other code after exit';
+	}
+
+	public function prematureReturn() {
+		return true;
+		'some other code after return';
+	}
+
+	public function prematureBreakAndContinue() {
+		while (true) {
+			continue;
+			break;
+			'some other code after break or continue';
+		}
+	}
+
+	public function stringConcat() {
+		'asdfghjkl'
+		. 'zxcvbnm';
+	}
+
+	public function evalUsage() {
+		eval('$instance = new Bar'); // warn about each eval usage
 	}
 }

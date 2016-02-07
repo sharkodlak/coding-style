@@ -11,9 +11,10 @@
 		<exclude name="Generic.Files.LowercasedFilename"/>
 		<exclude name="Generic.Files.OneClassPerFile"/>
 		<exclude name="Generic.Formatting.MultipleStatementAlignment"/>
-		<exclude name="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine"/>
+		<exclude name="Generic.Functions.OpeningFunctionBraceBsdAllman"/>
 		<exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie.SpaceAfterBracket"/>
 		<exclude name="Generic.PHP.ClosingPHPTag"/>
+		<exclude name="Generic.PHP.UpperCaseConstant"/>
 	</rule>
 	<rule ref="PSR2">
 		<exclude name="Generic.WhiteSpace.DisallowTabIndent"/>
@@ -44,8 +45,22 @@
 			<property name="absoluteLineLimit" value="0"/>
 		</properties>
 	</rule>
+	<rule ref="Generic.Metrics.NestingLevel">
+		<properties>
+			<property name="nestingLevel" value="3"/>
+			<property name="absoluteNestingLevel" value="6"/>
+		</properties>
+	</rule>
+	<rule ref="Generic.Strings.UnnecessaryStringConcat">
+		<properties>
+			<property name="error" value="false"/>
+		</properties>
+	</rule>
 	<rule ref="Generic.WhiteSpace.DisallowSpaceIndent"/>
 
+	<rule ref="MySource.PHP.EvalObjectFactory"/>
+
+	<rule ref="PEAR.Commenting.InlineComment"/>
 	<rule ref="PEAR.Files.IncludingFile.UseIncludeOnce">
 		<type>warning</type>
 	</rule>
@@ -61,10 +76,21 @@
 	<rule ref="Squiz.Commenting.FunctionCommentThrowTag.Missing">
 		<type>warning</type>
 	</rule>
+	<rule ref="Squiz.PHP.DiscouragedFunctions"/>
+	<rule ref="Squiz.PHP.Eval"/>
+	<rule ref="Squiz.PHP.ForbiddenFunctions"/>
+	<rule ref="Squiz.PHP.GlobalKeyword"/>
+	<rule ref="Squiz.PHP.LowercasePHPFunctions"/>
+	<rule ref="Squiz.PHP.NonExecutableCode"/>
+	<rule ref="Squiz.Scope.StaticThisUsage"/>
 	<rule ref="Squiz.Strings.EchoedStrings"/>
-	<rule ref="Squiz.WhiteSpace.CastSpacing"/>
-	<rule ref="Squiz.WhiteSpace.LanguageConstructSpacing"/>
-	<rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
+	<rule ref="Squiz.WhiteSpace">
+		<exclude name="Squiz.WhiteSpace.ControlStructureSpacing.NoLineAfterClose"/>
+		<exclude name="Squiz.WhiteSpace.FunctionClosingBraceSpace"/>
+		<exclude name="Squiz.WhiteSpace.FunctionSpacing"/>
+		<exclude name="Squiz.WhiteSpace.MemberVarSpacing"/>
+		<exclude name="Squiz.WhiteSpace.ObjectOperatorSpacing.Before"/>
+	</rule>
 
 	<rule ref="Zend.Files.ClosingTag"/>
 </ruleset>
