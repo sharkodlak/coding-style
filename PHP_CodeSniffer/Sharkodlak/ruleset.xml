@@ -7,6 +7,8 @@
 	<rule ref="Generic">
 		<exclude name="Generic.Arrays.DisallowShortArraySyntax"/>
 		<exclude name="Generic.CodeAnalysis.UnconditionalIfStatement"/>
+		<exclude name="Generic.Commenting.DocComment.ContentAfterOpen"/>
+		<exclude name="Generic.Commenting.DocComment.SpacingBeforeShort"/>
 		<exclude name="Generic.Files.EndFileNoNewline"/>
 		<exclude name="Generic.Files.LowercasedFilename"/>
 		<exclude name="Generic.Files.OneClassPerFile"/>
@@ -48,8 +50,8 @@
 	</rule>
 	<rule ref="Generic.Metrics.NestingLevel">
 		<properties>
-			<property name="nestingLevel" value="3"/>
-			<property name="absoluteNestingLevel" value="6"/>
+			<property name="nestingLevel" value="2"/>
+			<property name="absoluteNestingLevel" value="3"/>
 		</properties>
 	</rule>
 	<rule ref="Generic.Strings.UnnecessaryStringConcat">
@@ -61,9 +63,11 @@
 
 	<rule ref="MySource.PHP.EvalObjectFactory"/>
 
-	<rule ref="PEAR.Commenting.InlineComment"/>
-	<rule ref="PEAR.Files.IncludingFile.UseIncludeOnce">
-		<type>warning</type>
+	<rule ref="PEAR.Commenting.InlineComment">
+		<exclude name="PEAR.Files.IncludingFile.UseInclude"/>
+		<exclude name="PEAR.Files.IncludingFile.UseIncludeOnce"/>
+		<exclude name="PEAR.Files.IncludingFile.UseRequire"/>
+		<exclude name="PEAR.Files.IncludingFile.UseRequireOnce"/>
 	</rule>
 	<rule ref="PEAR.Formatting.MultiLineAssignment"/>
 	<rule ref="PEAR.WhiteSpace.ObjectOperatorIndent"/>

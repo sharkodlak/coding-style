@@ -6,8 +6,6 @@ namespace Sharkodlak\CodingStyle;
 include_once(__DIR__ . '/file.php');
 require_once(__DIR__ . '/file.php');
 
-use AnotherNameSpace\{ClassFirst, ClassSecond as SecondClass};
-use function AnotherNameSpace\{functionFirst, functionSecond as secondFunction};
 use const AnotherNameSpace\{CONST_FIRST, CONST_SECOND as SECOND_CONST};
 
 class  Bad
@@ -23,7 +21,7 @@ Stupid {
 
 	static public function asdf()
 	{
-		$range = range(0,10,1);
+		$range = range(0,10);
 		for ($i = 0; $i < 10; ++$i)
 		{
 			// empty
@@ -158,6 +156,18 @@ class Second_Class {
 
 	public function camel_caps() {
 		doSomethink();
+	}
+
+	public function nesting() {
+		if ($a) {
+			if ($b) {
+				if ($c) {
+					if ($d) {
+						doSomethink();
+					}
+				}
+			}
+		}
 	}
 }
 ?>

@@ -91,6 +91,8 @@ class Good extends Fine implements Right,
 			->done();
 	}
 
+	/** Short description on same line as comment openning.
+	 */
 	public function switchStatement() {
 		switch ($variable) {
 			case 'value':

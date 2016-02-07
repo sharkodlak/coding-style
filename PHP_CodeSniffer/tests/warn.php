@@ -47,8 +47,7 @@ final class Warn {
 		require_once __DIR__ . '/file.php';
 	}
 
-	/**
-	 * Throws exception, so it shall be documented.
+	/** Throws exception, so it shall be documented.
 	 */
 	public function documentExceptionThrow() {
 		throw new \Exception("Error Processing Request", 1);
@@ -79,5 +78,18 @@ final class Warn {
 
 	public function evalUsage() {
 		eval('$instance = new Bar'); // warn about each eval usage
+	}
+
+	/**
+	 * Short description shall be on the opening line so it can be folded and still visible.
+	 */
+	public function nesting() {
+		if ($a) {
+			if ($b) {
+				if ($c) {
+					doSomethink();
+				}
+			}
+		}
 	}
 }
