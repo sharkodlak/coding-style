@@ -155,6 +155,10 @@ class Second_Class {
 		$a = 1, $b = 2;
 		$c = 3; doSomethink();
 	}
+
+	public function camel_caps() {
+		doSomethink();
+	}
 }
 ?>
 Output send

@@ -13,6 +13,7 @@
 		<exclude name="Generic.Formatting.MultipleStatementAlignment"/>
 		<exclude name="Generic.Functions.OpeningFunctionBraceBsdAllman"/>
 		<exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie.SpaceAfterBracket"/>
+		<exclude name="Generic.NamingConventions.CamelCapsFunctionName.ScopeNotCamelCaps"/>
 		<exclude name="Generic.PHP.ClosingPHPTag"/>
 		<exclude name="Generic.PHP.UpperCaseConstant"/>
 	</rule>
