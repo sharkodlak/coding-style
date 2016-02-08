@@ -7,7 +7,9 @@
  * @category  PHP
  * @package   PHP_CodeSniffer
  * @author    Pavel Štětina <github@shark.kom.cz>
- * @license   https://raw.githubusercontent.com/sharkodlak/coding-style/master/LICENSE MIT Licence
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
  * @link      http://pear.php.net/package/PHP_CodeSniffer
  */
 
@@ -17,7 +19,9 @@
  * @category  PHP
  * @package   PHP_CodeSniffer
  * @author    Pavel Štětina <github@shark.kom.cz>
- * @license   https://raw.githubusercontent.com/sharkodlak/coding-style/master/LICENSE MIT Licence
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
  * @version   Release: @package_version@
  * @link      http://pear.php.net/package/PHP_CodeSniffer
  */
@@ -70,7 +74,7 @@ class Sharkodlak_Sniffs_Commenting_DocCommentSniff implements PHP_CodeSniffer_Sn
 		// The first line of the comment should have /** comment openning and short description.
 		if ($tokens[$short]['line'] !== $tokens[$stackPtr]['line']) {
 			$error = 'Short description must follow doc comment open tag immediatelly';
-			$fix = $phpcsFile->addFixableWarning($error, $stackPtr, 'DescriptionAway');
+			$fix = $phpcsFile->addFixableWarning($error, $stackPtr, 'DescriptionOnAnotherLine');
 			if ($fix === true) {
 				$phpcsFile->fixer->beginChangeset();
 				for ($ptr = $stackPtr + 1; $ptr < $short; ++$ptr) {

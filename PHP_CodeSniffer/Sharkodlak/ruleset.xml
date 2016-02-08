@@ -7,6 +7,7 @@
 	<rule ref="Generic">
 		<exclude name="Generic.Arrays.DisallowShortArraySyntax"/>
 		<exclude name="Generic.CodeAnalysis.UnconditionalIfStatement"/>
+		<exclude name="Generic.CodeAnalysis.UnusedFunctionParameter"/>
 		<exclude name="Generic.Commenting.DocComment.ContentAfterOpen"/>
 		<exclude name="Generic.Commenting.DocComment.SpacingBeforeShort"/>
 		<exclude name="Generic.Files.EndFileNoNewline"/>
@@ -41,6 +42,12 @@
 	</rule>
 	<rule ref="Generic.Commenting.DocComment">
 		<severity>3</severity>
+	</rule>
+	<rule ref="Generic.Commenting.DocComment.NonParamGroup">
+		<type>warning</type>
+	</rule>
+	<rule ref="Generic.Commenting.DocComment.TagValueIndent">
+		<type>warning</type>
 	</rule>
 	<rule ref="Generic.Files.LineLength">
 		<properties>

@@ -103,4 +103,15 @@ class Good extends Fine implements Right,
 				// code...
 		}
 	}
+
+	public function unusedParameters($a, $b, $c) {
+		"Text with $a replacement.";
+		<<<"HEREDOC"
+Text with {$b} and ${c} replacement
+HEREDOC;
+	}
+
+	public function unusedParametersGetArgs($d, $e) {
+		func_get_args();
+	}
 }

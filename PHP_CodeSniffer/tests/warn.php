@@ -23,10 +23,6 @@ final class Warn {
 		}
 	}
 
-	public function unusedParameters($a = 'default') {
-		doSomethink();
-	}
-
 	public function expressionElseif() {
 		if ($var == 1) {
 			doSomethink();
@@ -91,5 +87,12 @@ final class Warn {
 				}
 			}
 		}
+	}
+
+	public function unusedParameters($a, $b) {
+		'Text with $a replacement.';
+		<<<'NOWDOC'
+Text with $b replacement
+NOWDOC;
 	}
 }

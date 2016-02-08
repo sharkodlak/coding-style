@@ -7,7 +7,10 @@
  * @category  PHP
  * @package   PHP_CodeSniffer
  * @author    Pavel Štětina <github@shark.kom.cz>
- * @license   https://raw.githubusercontent.com/sharkodlak/coding-style/master/LICENSE MIT Licence
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Manuel Pichler <mapi@manuel-pichler.de>
+ * @copyright 2007-2014 Manuel Pichler. All rights reserved.
+ * @license   http://www.opensource.org/licenses/bsd-license.php BSD License
  * @link      http://pear.php.net/package/PHP_CodeSniffer
  */
 
@@ -30,7 +33,9 @@
  * @category  PHP
  * @package   PHP_CodeSniffer
  * @author    Pavel Štětina <github@shark.kom.cz>
- * @license   https://raw.githubusercontent.com/sharkodlak/coding-style/master/LICENSE MIT Licence
+ * @author    Manuel Pichler <mapi@manuel-pichler.de>
+ * @copyright 2007-2014 Manuel Pichler. All rights reserved.
+ * @license   http://www.opensource.org/licenses/bsd-license.php BSD License
  * @version   Release: @package_version@
  * @link      http://pear.php.net/package/PHP_CodeSniffer
  */
