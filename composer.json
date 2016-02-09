@@ -19,6 +19,7 @@
 		"wiki": "https://github.com/sharkodlak/coding-style/wiki"
 	},
 	"require-dev": {
+		"phpmd/phpmd": "*",
 		"squizlabs/php_codesniffer": "*"
 	}
 }
