@@ -6,8 +6,6 @@ namespace Sharkodlak\CodingStyle;
 include_once(__DIR__ . '/file.php');
 require_once(__DIR__ . '/file.php');
 
-use const AnotherNameSpace\{CONST_FIRST, CONST_SECOND as SECOND_CONST};
-
 class  Bad
 extends Wrong
 	implements Incorrect, Mallformed,
@@ -17,7 +15,6 @@ Stupid {
 		"second line should start wit assignment operator";
 	public $first = 1,
 		$second = 2;
-	private $a = doSomethink ( $spacedParenthesis ) ;
 
 	static public function asdf()
 	{
@@ -68,10 +65,10 @@ Stupid {
  		thereIsASpaceAndTabs();
 	}
 
-	protected function closure() {
-		$a = function() use($this) {
-			return $this->a;
-		}
+	protected function anonymousFunction() {
+		$a = function() use($self) {
+			return $this->first;
+		};
 	}
 
 	public function parameterDefaultness($a = 'default', $missingDefaultValue) {
@@ -150,8 +147,7 @@ class Second_Class {
 
 	# invalid comment
 	public function multipleStatements() {
-		$a = 1, $b = 2;
-		$c = 3; doSomethink();
+		$a = 1; doSomethink();
 	}
 
 	public function camel_caps() {

@@ -15,7 +15,7 @@ function includeFile() {
 }
 
 final class Warn {
-	final public $final;
+	public $final;
 
 	public function avoidFunctionCallsInForLoopTest() {
 		for ($i = 0; $i < count($range); ++$i) {
