@@ -8,6 +8,7 @@ define('CONSTANT_HOUR', 60 * 60);
 
 function qwertyuiopAsdfghjklZxcvbnm1234567890QwertyuiopAsdfghjklZxcvbnm1234567890QwertyuiopAsdfghjklZxcvbnm1234567890QwertyuiopAsdfghjkl() {
 	$longArraySyntax = array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+	return $longArraySyntax;
 }
 
 function includeFile() {
@@ -16,8 +17,10 @@ function includeFile() {
 
 final class Warn {
 	public $final;
+	protected $_underscore;
 
 	public function avoidFunctionCallsInForLoopTest() {
+		$range = range(0, 9);
 		for ($i = 0; $i < count($range); ++$i) {
 			doSomethink();
 		}
@@ -27,7 +30,7 @@ final class Warn {
 		if ($var == 1) {
 			doSomethink();
 		} elseif ($var > 0) {
-			--$i;
+			doSomethinkElse();
 		}
 	}
 
@@ -39,7 +42,7 @@ final class Warn {
 		}
 	}
 
-	private function includeFile() {
+	public function includeFile() {
 		require_once __DIR__ . '/file.php';
 	}
 
@@ -80,19 +83,20 @@ final class Warn {
 	 * Short description shall be on the opening line so it can be folded and still visible.
 	 */
 	public function nesting() {
-		if ($a) {
-			if ($b) {
-				if ($c) {
+		$first = $second = $third = true;
+		if ($first) {
+			if ($second) {
+				if ($third) {
 					doSomethink();
 				}
 			}
 		}
 	}
 
-	public function unusedParameters($a, $b) {
-		'Text with $a replacement.';
+	public function unusedParameters($first, $second) {
+		'Text with $first replacement.';
 		<<<'NOWDOC'
-Text with $b replacement
+Text with $second replacement
 NOWDOC;
 	}
 }

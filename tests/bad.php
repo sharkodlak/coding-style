@@ -10,24 +10,29 @@ class  Bad
 extends Wrong
 	implements Incorrect, Mallformed,
 Stupid {
-	static private $own = NULL;
+	static protected $own = NULL;
 	public $multiline =
 		"second line should start wit assignment operator";
 	public $first = 1,
 		$second = 2;
 
-	static public function asdf()
-	{
-		$range = range(0,10);
+	static protected function commaSeparatedArguments($start,$end) {
+		return range($start,$end);
+	}
+	static protected function emptyFor() {
 		for ($i = 0; $i < 10; ++$i)
 		{
 			// empty
 		}
+	}
+
+	static public function bracketsUsage($variable)
+	{
 		if (TRUE) echo 'yes';
 		else if (FALSE) {
-			++$i;
+			doSomethink();
 		} else if (1) {
-			--$i;
+			doSomethink();
 		} else if ('string') {
 			doSomethink();
 		}
@@ -35,7 +40,7 @@ Stupid {
 			doSomethink();
 		}
 		else if ("$variable") {
-			// should warn
+			doSomethink();
 		}
 		else if (CONSTANT_EXPRESSION) {}
 		else
@@ -45,7 +50,7 @@ Stupid {
 		return FALSE;
 	}
 
-	protected function multilineCondition() {
+	protected function multilineCondition($first, $second) {
 		if ($first > 7 &&
 			$second < 9)
 		{
@@ -66,13 +71,19 @@ Stupid {
 	}
 
 	protected function anonymousFunction() {
-		$a = function() use($self) {
+		function() use($self) {
 			return $this->first;
 		};
 	}
 
-	public function parameterDefaultness($a = 'default', $missingDefaultValue) {
-		doSomethink($a = 'default', $missingDefaultValue);
+	public function closingBraceIndentation() {
+		doSomethink();
+		}
+
+	public function scopeIndentation($var) {
+	if ($var) {
+	doSomethink();
+	}
 	}
 }
 
@@ -92,20 +103,14 @@ class AbstractRiverBank implements RiverBank {
 }
 
 class Second_Class {
+	public function parameterDefaultness($first = 'default', $missingDefaultValue) {
+		doSomethink($first = 'default', $missingDefaultValue);
+	}
+
 	protected function flow() {
 		$this->instance->
 			do()
 		->done();
-	}
-
-	public function closingBraceIndentation() {
-		doSomethink();
-		}
-
-	public function scopeIndentation() {
-	if ($var) {
-	doSomethink();
-	}
 	}
 
 	public function multilineFunctionCall($first, $second,
@@ -114,18 +119,19 @@ class Second_Class {
 		doSomethink($first, $second, $third, $fourth);
 	}
 
-	public function arrayKeyBracesSpacing() {
-		$array [ $key ];
+	public function arrayKeyBracesSpacing($array, $key) {
+		return $array [ $key ];
 	}
 
 	public function classNameAsReference() {
 		Second_Class::method();
 	}
 
-	public function foreachSpacing() {
+	public function foreachSpacing($iterator) {
 		foreach ($iterator  AS $key=>$value) {
-
+			// empty
 		}
+		return $value;
 	}
 
 	public function echoConstruct() {
@@ -137,28 +143,29 @@ class Second_Class {
 		doSomethink();
 	}
 
-	public function typeCasting() {
+	public function typeCasting($float) {
 		( int ) $float;
 	}
 
-	public function semicolonSpacing() {
+	public function semicolonSpacing($var) {
 		$var = 'sdfghjk' ;
 	}
 
 	# invalid comment
 	public function multipleStatements() {
-		$a = 1; doSomethink();
+		$number = 1; doSomethink();
+		return $number;
 	}
 
-	public function camel_caps() {
+	protected function camel_caps() {
 		doSomethink();
 	}
 
-	public function nesting() {
-		if ($a) {
-			if ($b) {
-				if ($c) {
-					if ($d) {
+	protected function nesting($first, $second, $third, $fourth) {
+		if ($first) {
+			if ($second) {
+				if ($third) {
+					if ($fourth) {
 						doSomethink();
 					}
 				}

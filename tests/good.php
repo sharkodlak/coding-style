@@ -16,20 +16,18 @@ class Good extends Fine implements Right,
 	public static $char = 'qwertyuiop'[3];
 	private $binary
 		= 0b01010101;
-	protected $_underscore;
 
-	protected static function tcf() {
+	protected static function tcf($condition) {
 		try {
+			$cmp = 0;
 			if ($condition < 0) {
 				$cmp = -1;
 			} else if ($condition > 0) {
 				$cmp = 1;
-			} else {
-				$cmp = 0;
 			}
 			throw new \Exception('blah blah blah');
 		} catch (\Exception $e) {
-			$ex = $e;
+			$e->getMessage();
 		} finally {
 			echo 'finish';
 		}
@@ -37,6 +35,12 @@ class Good extends Fine implements Right,
 
 	private static function methodExpression() {
 		return self::{'t' . chr(ord('c')) . 'f'}();
+	}
+
+	protected function doNotWarnAboutUnusedPrivate() {
+		$tcf = self::methodExpression();
+		$range = $this->range(0, 9);
+		return [self::$staticAttic, $this->binary, $tcf, $range];
 	}
 
 	public function instantiationAccess() {
@@ -49,7 +53,7 @@ class Good extends Fine implements Right,
 		}
 	}
 
-	protected function multilineCondition() {
+	protected function multilineCondition($first, $second, $third) {
 		if ($first > 7
 			&& $second < 9
 			|| $third
@@ -58,17 +62,18 @@ class Good extends Fine implements Right,
 		}
 	}
 
-	private function includeFile() {
+	public function includeFile() {
 		include_once __DIR__ . '/file.php';
 	}
 
-	protected function closure() {
-		$a = function () use ($this) {
-			return $this->a;
+	public function closure() {
+		$self = $this;
+		return function () use ($self) {
+			return $self->a;
 		};
 	}
 
-	protected function flow() {
+	public function flow() {
 		$this->instance
 			->do()
 			->done();
@@ -76,8 +81,8 @@ class Good extends Fine implements Right,
 
 	/** Short description on same line as comment openning.
 	 */
-	public function switchStatement() {
-		switch ($variable) {
+	public function switchStatement($case) {
+		switch ($case) {
 			case 'value':
 			case 'another value':
 				// code...
@@ -87,14 +92,14 @@ class Good extends Fine implements Right,
 		}
 	}
 
-	public function unusedParameters($a, $b, $c) {
-		"Text with $a replacement.";
+	public function unusedParameters($first, $second, $third) {
+		"Text with $first replacement.";
 		<<<"HEREDOC"
-Text with {$b} and ${c} replacement
+Text with {$second} and ${third} replacement
 HEREDOC;
 	}
 
-	public function unusedParametersGetArgs($d, $e) {
+	public function unusedParametersGetArgs($uno, $duo) {
 		func_get_args();
 	}
 }
