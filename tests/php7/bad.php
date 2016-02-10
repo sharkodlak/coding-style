@@ -1,6 +1,6 @@
 <?php
 
-namespace Sharkodlak\CodingStyle;
+namespace Sharkodlak\CodingStyle\Php7;
 
 use const AnotherNameSpace\{CONST_FIRST, CONST_SECOND as SECOND_CONST};
 

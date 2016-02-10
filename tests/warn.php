@@ -62,9 +62,12 @@ final class Warn {
 		'some other code after return';
 	}
 
-	public function prematureBreakAndContinue() {
+	public function prematureBreakAndContinue($first) {
 		while (true) {
 			continue;
+			'some other code after break or continue';
+		}
+		while ($first) {
 			break;
 			'some other code after break or continue';
 		}
@@ -98,5 +101,41 @@ final class Warn {
 		<<<'NOWDOC'
 Text with $second replacement
 NOWDOC;
+	}
+
+	public function forLoopToWhile($first) {
+		for (; true;) {
+			doSomethink();
+		}
+	}
+
+	protected function cyclomaticComplexity($first) {
+		switch ($first) {
+			case 1:
+				doSomethink();
+				break;
+			default:
+				doSomethink();
+		}
+		if ($first) {
+			doSomethink();
+		} else if ($first) {
+			doSomethink();
+		}
+		while ($first) {
+			for (; $first; $first) {
+				doSomethink();
+			}
+		}
+		do {
+			for (; true; $first) {
+				doSomethink();
+			}
+		} while ($first);
+		if ($first) {
+			do {
+				doSomethink();
+			} while ($first);
+		}
 	}
 }

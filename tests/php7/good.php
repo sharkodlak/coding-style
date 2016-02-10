@@ -1,6 +1,6 @@
 <?php
 
-namespace Sharkodlak\CodingStyle;
+namespace Sharkodlak\CodingStyle\Php7;
 
 use function SubNameSpace\functionFirst;
 use function SubNameSpace\functionSecond as secondFunction;
